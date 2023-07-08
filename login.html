@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recruitment Solution - Login</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="search.html">Candidate Search</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="login">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="register.html">Register here</a></p>
+    </section>
+
+    
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2023 Recruitment Solution. All rights reserved.</p>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        
+        
+    </footer>
+
+    <script>
+        
+
+       
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+          
+            var email = document.getElementsByName("email")[0].value;
+            var password = document.getElementsByName("password")[0].value;
+
+           
+            var registeredUsers = JSON.parse(localStorage.getItem("registeredUsers")) || [];
+            var user = registeredUsers.find(function(user) {
+                return user.email === email && user.password === password;
+            });
+
+            if (user) {
+                alert("Login successful. Welcome, " + user.fullname + "!");
+             
+                document.getElementById("loginForm").reset();
+            } else {
+                alert("Invalid email or password. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>

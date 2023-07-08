@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recruitment Solution - Register</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="search.html">Candidate Search</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="register">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <input type="text" placeholder="Full Name" name="fullname" required>
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </section>
+
+    <footer>
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2023 Recruitment Solution. All rights reserved.</p>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </footer>
+        
+    </footer>
+
+    <script>
+        
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+           
+            var fullname = document.getElementsByName("fullname")[0].value;
+            var email = document.getElementsByName("email")[0].value;
+            var password = document.getElementsByName("password")[0].value;
+
+            
+            var registeredUsers = JSON.parse(localStorage.getItem("registeredUsers")) || [];
+            var isRegistered = registeredUsers.some(function(user) {
+                return user.email === email;
+            });
+
+            if (isRegistered) {
+                alert("User with this email already exists. Please log in.");
+            } else {
+                
+                var user = {
+                    fullname: fullname,
+                    email: email,
+                    password: password
+                };
+
+                // Store the user object in local storage
+                registeredUsers.push(user);
+                localStorage.setItem("registeredUsers", JSON.stringify(registeredUsers));
+
+                alert("Registration successful. You can now log in.");
+                document.getElementById("registerForm").reset();
+            }
+        });
+    </script>
+</body>
+</html>

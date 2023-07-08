@@ -1,0 +1,407 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #00a0df;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #222;
+    padding: 20px 0;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    font-weight: bold;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #00a0df;
+  }
+  
+  /* Hero section styles */
+  #hero {
+    background-color: #222;
+    text-align: center;
+    padding: 100px 0;
+    color: #fff;
+  }
+  
+  #hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  #hero p {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #00a0df;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #0084bf;
+  }
+  
+/* Features section styles */
+#features {
+    background-color: #f6f6f6;
+    padding: 80px 0;
+    text-align: center;
+  }
+  
+  #features h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  #features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  #features ul li {
+    flex-basis: 50%;
+  }
+  
+  #features .feature-item:nth-child(even) {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 40px;
+  }
+  
+  .feature-item {
+    display: flex;
+    align-items: center;
+    background-color: #00a0df;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #fff;
+  }
+  
+  
+  /* Testimonial section styles */
+  #testimonial {
+    background-color: #fff;
+    padding: 80px 0;
+    text-align: center;
+  }
+  
+  .testimonial-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .testimonial-item {
+    flex-basis: 50%;
+    margin-bottom: 40px;
+    padding: 0 20px;
+  }
+  
+  .testimonial-item p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .author {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  
+  /* Footer styles */
+  footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+  /* Login page styles */
+#login {
+  background-color: #fff;
+  padding: 80px 0;
+  text-align: center;
+}
+
+#login h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+#login form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#login input[type="email"],
+#login input[type="password"] {
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#login button[type="submit"] {
+  padding: 12px 24px;
+  background-color: #00a0df;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+#login button[type="submit"]:hover {
+  background-color: #0084bf;
+}
+
+#login p {
+  margin-top: 20px;
+}
+
+#login p a {
+  color: #00a0df;
+}
+
+#login p a:hover {
+  color: #0084bf;
+}
+
+/* Register page styles */
+#register {
+  background-color: #fff;
+  padding: 80px 0;
+  text-align: center;
+}
+
+#register h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+#register form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#register input[type="text"],
+#register input[type="email"],
+#register input[type="password"] {
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#register button[type="submit"] {
+  padding: 12px 24px;
+  background-color: #00a0df;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+#register button[type="submit"]:hover {
+  background-color: #0084bf;
+}
+
+#register p {
+  margin-top: 20px;
+}
+
+#register p a {
+  color: #00a0df;
+}
+
+#register p a:hover {
+  color: #0084bf;
+}
+
+/* Candidate search page styles */
+#search {
+  background-color: #fff;
+  padding: 80px 0;
+  text-align: center;
+}
+
+#search h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+#search form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#search input[type="text"] {
+  flex-basis: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#search button[type="submit"] {
+  padding: 12px 24px;
+  background-color: #00a0df;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+#search button[type="submit"]:hover {
+  background-color: #0084bf;
+}
+
+#candidate-list {
+  background-color: #f6f6f6;
+  padding: 80px 0;
+  text-align: center;
+}
+
+#candidate-list h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+#candidate-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#candidate-list li {
+  flex-basis: 33.33%;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+
+#candidate-list .candidate-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#candidate-list .candidate-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+#candidate-list .candidate-item h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#candidate-list .candidate-item p {
+  font-size: 18px;
+  color: #555;
+}
+footer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.footer-content ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-content ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-content ul li a {
+  text-decoration: none;
+  color: #888888;
+}
+
+.footer-content ul li a:hover {
+  color: #333333;
+}

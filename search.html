@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recruitment Solution - Candidate Search</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="search.html">Candidate Search</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="search">
+        <h2>Candidate Search</h2>
+        <form id="searchForm">
+            <input type="text" placeholder="Location" name="location">
+            <input type="text" placeholder="Job Role" name="jobRole">
+            <button type="submit">Search</button>
+        </form>
+    </section>
+
+    <section id="candidate-list">
+        <h2>Candidate List</h2>
+        <ul id="candidateList">
+            
+        </ul>
+    </section>
+
+    <footer>
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2023 Recruitment Solution. All rights reserved.</p>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </footer>
+        
+    </footer>
+
+    <script>
+
+        // Sample candidate list object
+        var candidateList = [
+            {
+                name: "John Doe",
+                location: "New York",
+                jobRole: "Software Engineer",
+                image: "john_doe.jpg"
+            },
+            {
+                name: "Jane Smith",
+                location: "San Francisco",
+                jobRole: "Web Developer",
+                image: "jane_smith.jpg"
+            },
+            {
+                name: "Mike Johnson",
+                location: "London",
+                jobRole: "Data Analyst",
+                image: "mike_johnson.jpg"
+            }
+         
+        ];
+
+        // Function to display the candidate list
+        function displayCandidates(candidates) {
+            var candidateListElement = document.getElementById("candidateList");
+
+            // Clear previous list
+            candidateListElement.innerHTML = "";
+
+            // Iterate through each candidate and create list items
+            candidates.forEach(function(candidate) {
+                var listItem = document.createElement("li");
+                listItem.className = "candidate-item";
+
+                var candidateInfo = document.createElement("div");
+                candidateInfo.className = "candidate-info";
+
+                var candidateImage = document.createElement("img");
+                candidateImage.src = candidate.image;
+                candidateImage.alt = candidate.name;
+                candidateImage.className = "candidate-image";
+
+                var candidateName = document.createElement("h3");
+                candidateName.textContent = candidate.name;
+
+                var candidateDetails = document.createElement("p");
+                candidateDetails.innerHTML = "Location: " + candidate.location + "<br>" +
+                    "Job Role: " + candidate.jobRole;
+
+                candidateInfo.appendChild(candidateImage);
+                candidateInfo.appendChild(candidateName);
+                candidateInfo.appendChild(candidateDetails);
+
+                listItem.appendChild(candidateInfo);
+                candidateListElement.appendChild(listItem);
+            });
+        }
+
+        // Function to handle the search form submission
+        document.getElementById("searchForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            var location = document.getElementsByName("location")[0].value.toLowerCase();
+            var jobRole = document.getElementsByName("jobRole")[0].value.toLowerCase();
+
+            // Filter the candidate list based on search criteria
+            var filteredCandidates = candidateList.filter(function(candidate) {
+                var candidateLocation = candidate.location.toLowerCase();
+                var candidateJobRole = candidate.jobRole.toLowerCase();
+
+                return candidateLocation.includes(location) && candidateJobRole.includes(jobRole);
+            });
+
+            // Display the filtered candidate list
+            displayCandidates(filteredCandidates);
+        });
+
+        // Initial display of all candidates
+        displayCandidates(candidateList);
+    </script>
+</body>
+</html>
