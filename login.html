@@ -49,9 +49,10 @@
             });
 
             if (user) {
-                alert("Login successful. Welcome, " + user.fullname + "!");
+                
                 document.getElementById("loginForm").reset();
                 window.location.href = "search.html"; // Redirect to search.html
+                alert("Login successful. Welcome, " + user.fullname + "!");
             } else {
                 alert("Invalid email or password. Please try again.");
             }
